@@ -12,7 +12,6 @@ class TaskSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    permission_classes = [permissions.IsAuthenticated]
     tasks = serializers.PrimaryKeyRelatedField(many = True, queryset = Task.objects.all())
     class Meta:
         model = User
