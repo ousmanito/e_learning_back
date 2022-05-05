@@ -6,12 +6,14 @@ from rest_framework import permissions
 
 
 class TaskViewSet(viewsets.ModelViewSet):
-    permission_classes = [permissions.AllowAny]
-    queryset = Task.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = TaskSerializer
+
+    def get_queryset(self):
+        return Task.objects.all().filter(user = self.request.user)
 
     
 class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAdminUser]
     queryset = User.objects.all()
     serializer_class = UserSerializer
