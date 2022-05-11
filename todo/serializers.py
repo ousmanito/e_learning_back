@@ -8,7 +8,7 @@ from rest_framework import permissions
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['user', 'title', 'description', 'completed', 'key']
+        fields = ['user', 'title', 'description', 'completed', 'key', 'time', 'date', 'category']
 
 
 class UserSerializer(serializers.ModelSerializer):
