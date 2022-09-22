@@ -5,6 +5,8 @@
 __pycache__
 db.sqlite3
 media
+venv/
+todo_app/migrations/
 
 # Backup files # 
 *.bak 
@@ -101,6 +103,7 @@ celerybeat-schedule.*
 .venv 
 env/ 
 venv/ 
+venv_windows/
 ENV/ 
 env.bak/ 
 venv.bak/ 
@@ -135,3 +138,5 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+venv/Lib/site-packages/_distutils_hack/__pycache__/__init__.cpython-310.pyc
+venv/Lib/site-packages/__pycache__/pycodestyle.cpython-310.pyc

@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from todo_api.views import TaskViewSet, UserViewSet
+from todo_api.views import CategoryViewSet, TaskViewSet, UserViewSet
 from rest_framework.authtoken import views
 
 
@@ -8,6 +8,7 @@ from rest_framework.authtoken import views
 router = DefaultRouter()
 router.register(r'task', TaskViewSet,basename="task")
 router.register(r'user', UserViewSet, basename='user' )
+router.register(r'category', CategoryViewSet, basename='category')
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
