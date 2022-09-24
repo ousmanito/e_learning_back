@@ -1,4 +1,7 @@
 # Django #
+todo_app/migrations/
+venv/
+venv_windows/
 *.log
 *.pot
 *.pyc
