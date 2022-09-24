@@ -18,7 +18,7 @@ class Task(models.Model):
     time = models.TimeField(null = True,blank = True)
     completed = models.BooleanField(default=False)
     key = models.AutoField(primary_key=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default="NULL")
+    category = models.ForeignKey(Category, blank=True, null=True, on_delete=models.SET_DEFAULT, default="NULL")
     def __str__(self):
         return self.title
 
