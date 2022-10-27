@@ -20,14 +20,13 @@ class CategoryViewSet(viewsets.ModelViewSet):
         return Category.objects.all().filter(user = self.request.user)
 
 class TaskCategoryViewSet(viewsets.ModelViewSet):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = TaskCategorySerializer
     def get_queryset(self):
         return TaskCategoryModel.objects.all().filter(user = self.request.user)
 
 
         
-    
 class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAdminUser]
     queryset = User.objects.all()

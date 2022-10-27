@@ -7,10 +7,10 @@ from django.forms import DateTimeField
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=72, blank=True, null=True)
+    title = models.CharField(max_length=72)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="category", default=1)
     def __str__(self) -> str:
-        return self.title
+        return self.title or ""
 
 
 class Task(models.Model):
@@ -23,12 +23,12 @@ class Task(models.Model):
     completed = models.BooleanField(default=False)
     key = models.AutoField(primary_key=True)
     def __str__(self):
-        return self.title
+        return self.title or ""
 
 class TaskCategoryModel(models.Model):
-    task = models.ForeignKey(Task, on_delete=models.SET_DEFAULT, default="")
-    category = models.ForeignKey(Category,  on_delete=models.SET_DEFAULT, default="")
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,  on_delete=models.SET_NULL, null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default="", null=True)
 
     def __str__(self):
-        return f"Task : {self.task}, Category : {self.category}"
+        return f"Task : {self.task}, Category : {self.category}" or ""
