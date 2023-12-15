@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fsbevfr4lh7^z%voo_u)mwvv=i)3hnv5t!@cgxe=1u#1a4ldn$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo_api.apps.TodoApiConfig',
-    'todo_app.apps.TodoAppConfig',
+    'todo',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser'
@@ -62,7 +61,7 @@ ROOT_URLCONF = 'todo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR /'todo' /'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
